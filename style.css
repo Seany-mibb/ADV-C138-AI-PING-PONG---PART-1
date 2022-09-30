@@ -1,0 +1,17 @@
+.heading
+{
+    width:100%;
+    text-align: left;
+}
+
+.heading button
+{
+    float:right;
+    margin-bottom: 50px;
+}
+
+.heading h2
+{
+    margin-top:50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
