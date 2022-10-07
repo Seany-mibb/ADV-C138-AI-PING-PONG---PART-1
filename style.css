@@ -2,16 +2,16 @@
 {
     width:100%;
     text-align: left;
+    height: 140px;
 }
 
 .heading button
 {
     float:right;
-    margin-bottom: 50px;
+    margin-bottom: 170px;
 }
 
 .heading h2
 {
-    margin-top:50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
