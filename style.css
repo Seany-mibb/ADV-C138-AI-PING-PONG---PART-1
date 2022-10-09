@@ -2,13 +2,12 @@
 {
     width:100%;
     text-align: left;
-    height: 140px;
+    height: 130px;
 }
 
 .heading button
 {
     float:right;
-    margin-bottom: 170px;
 }
 
 .heading h2
