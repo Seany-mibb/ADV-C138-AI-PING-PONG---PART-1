@@ -1,6 +1,6 @@
 
 /*created by prashant shukla */
-
+var video = '';
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -23,14 +23,25 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
+  video = createCapture(VIDEO);
+  video.size(700, 600);
+  video.hide();
   canvas.parent('canvas');
+
+  poseNet = ml5.poseNet(video, modelLoaded)
+  poseNet.on('pose', gotPoses);
+}
+
+function modelLoaded()
+{
+  console.log('model is loaded')
 }
 
 
 function draw(){
 
  background(0); 
-
+ image(video, 0, 0, 700, 600);
  fill("black");
  stroke("black");
  rect(680,0,20,700);
@@ -68,6 +79,13 @@ function draw(){
     move();
 }
 
+function gotPoses(results)
+{
+  if(results.length > 0)
+  {
+    console.log(results)
+  }
+}
 
 
 //function reset when ball does notcame in the contact of padde
