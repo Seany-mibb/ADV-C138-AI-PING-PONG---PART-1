@@ -1,7 +1,8 @@
-
 /*created by prashant shukla */
 var video = '';
 var paddle2 =10,paddle1=10;
+var Xright_wrist, Yright_wrist = 0
+right_wrist_score = 0
 
 var paddle1X = 10,paddle1Height = 110;
 var paddle2Y = 685,paddle2Height = 70;
@@ -40,6 +41,14 @@ function modelLoaded()
 
 function draw(){
 
+  if(right_wrist_score > 0.2)
+  {
+    fill('#e6c039')
+    stroke('#e6c039')
+    circle(Xright_wrist, Yright_wrist, 2);
+    console.log(right_wrist_score);
+  }
+  
  background(0); 
  image(video, 0, 0, 700, 600);
  fill("black");
@@ -83,8 +92,12 @@ function gotPoses(results)
 {
   if(results.length > 0)
   {
-    console.log(results)
+    console.log(results);
   }
+
+  Xright_wrist = results[0].pose.rightWrist.x;
+  Yright_wrist = results[0].pose.rightWrist.y;
+  right_wrist_score = results[0].pose.score;
 }
 
 
